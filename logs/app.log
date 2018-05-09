@@ -1,0 +1,149 @@
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:30 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:30 +0000] \"GET /css/index.css HTTP/1.1\" 200 23242\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:30 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 200 116927\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:30 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 200 899985\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:31 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 200 67833\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:31 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 200 393340\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:32 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 200 867106\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:32 +0000] \"GET /favicon.ico HTTP/1.1\" 404 2401\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:24:51 +0000] \"GET /js/antitest.d3debb1430b248a3a460.js HTTP/1.1\" 200 8864\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:25:19 +0000] \"GET /js/football.d3debb1430b248a3a460.js HTTP/1.1\" 200 82629\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:25:19 +0000] \"GET /cyhospital/weihospital/yanda/weiWangZhanIndex/?is_json=1 HTTP/1.1\" 404 2401\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:25:19 +0000] \"GET /images/icon_01.jpg HTTP/1.1\" 200 236016\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:01 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:02 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:02 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:02 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:02 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:02 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:02 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:10 +0000] \"GET /js/antitest.d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:31 +0000] \"GET /js/football.d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:31 +0000] \"GET /cyhospital/weihospital/yanda/weiWangZhanIndex/?is_json=1 HTTP/1.1\" 404 2401\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:31 +0000] \"GET /images/icon_01.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:35 +0000] \"GET /cyhospital/weihospital/yanda/weiWangZhanIndex/?is_json=1 HTTP/1.1\" 404 2401\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:26:50 +0000] \"GET /cyhospital/weihospital/yanda/weiWangZhanIndex/?is_json=1 HTTP/1.1\" 404 2401\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:17 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:22 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:27:26 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:51 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:51 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:51 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:51 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:52 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:52 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:34:52 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:43 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:44 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:44 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:44 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:45 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:45 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:36:45 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:41 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:41 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:41 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:41 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:42 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:42 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:45:42 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:17 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:51:44 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET / HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET /css/index.css HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"::ffff:192.168.2.55 - - [08/Feb/2018:03:53:49 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"Hello again distributed logs","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:38 +0000] \"GET / HTTP/1.1\" 200 1309\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:38 +0000] \"GET /css/index.css HTTP/1.1\" 200 23242\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:38 +0000] \"GET /js/index-d3debb1430b248a3a460.js HTTP/1.1\" 200 116927\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:38 +0000] \"GET /dll/vendor_3901f645ec1859ea59af.js HTTP/1.1\" 200 899985\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:38 +0000] \"GET /css/index.css.map HTTP/1.1\" 200 90\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:39 +0000] \"GET /images/my_pic_2.jpg HTTP/1.1\" 200 67833\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:39 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 200 393340\n","level":"info"}
+{"message":"::1 - - [08/Feb/2018:04:04:39 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 200 867106\n","level":"info"}
