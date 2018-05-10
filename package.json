@@ -36,5 +36,9 @@
     "sequelize": "^4.32.6",
     "supervisor": "^0.12.0",
     "winston": "^3.0.0-rc1"
+  },
+  "config": {
+    "commitizen": { "path": "cz-conventional-changelog" }
   }
+
 }
