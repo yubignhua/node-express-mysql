@@ -4,8 +4,7 @@
 module.exports = app =>{
     "use strict";
     const Users = app.db.models.Users;
-
-
+    
     app.route('/test/user')
         .all(app.auth.authenticate())
         .post((req,res)=>{

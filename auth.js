@@ -3,15 +3,12 @@ const passportMap = require('passport-jwt');
 const Strategy = passportMap.Strategy;
 const ExtractJwt = passportMap.ExtractJwt;
 
-//console.log('passportMap====',passportMap)
-
 module.exports = app => {
     const Users = app.db.models.Users;
     const cfg = app.config;
-    var opts = {};
+    let opts = {};
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("JWT");
     opts.secretOrKey = cfg.jwtSecret;
-    console.log('=======hahahh============');
     const strategy = new Strategy(opts, (payload, done) => {
         console.log('=======payload============',payload);
         Users.findById(payload.id)

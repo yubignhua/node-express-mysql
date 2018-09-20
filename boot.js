@@ -10,14 +10,8 @@ const ejs = require('ejs');
 
 module.exports = (app)=>{
     "use strict";
-
-    //设置 views 文件夹为存放视图文件的目录, 即存放模板文件的地方,__dirname 为全局变量,存储当前正在执行的脚本所在的目录
-    //app.set('views', path.join(__dirname, 'views'));
+    //设置 dist 文件夹为存放视图文件的目录, 即存放模板文件的地方,__dirname 为全局变量,存储当前正在执行的脚本所在的目录
     app.set('views', path.join(__dirname, 'dist'));
-
-    //设置视图模板引擎为 ejs。
-    //app.set('view engine', 'ejs');
-
     //设置返回原始 html 页面
     app.set('view engine', 'html');
     app.engine('html', ejs.renderFile);
@@ -25,10 +19,11 @@ module.exports = (app)=>{
     //设置端口号
     var port = normalizePort(app.config.port || '3001');
     app.set('port', port);
-
     app.db.sequelize.sync().done(()=>{//同步所有已定义的模型到数据库中成功后的回调
-        http.createServer(app).listen(app.get("port"), () => {
-            console.log('SERVER LISTENING TO PORT:'+ app.get('port')+' yubh: >>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>');
+        let server = http.createServer(app).listen(app.get("port"), () => {
+	        const address = server.address();
+          console.log("address:::::",address);
+          console.log(`SERVER LISTENING TO PORT:${app.get('port')}>>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>`);
         });
     });
     

@@ -4,7 +4,6 @@
 module.exports = app => {
     "use strict";
     const env = process.env.NODE_ENV;
-    console.log('evn:::',env);
     if (env) {
         return require(`./config.${env}.js`);
     }
