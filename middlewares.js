@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const debug = require('debug')('express:server');
 const session = require('express-session');
 const morgan = require('morgan');
-const logger = require("./logger");
+//const logger = require("./logger");
 const cors =  require("cors");
 const compression = require('compression');
 const helmet = require('helmet');
@@ -76,7 +76,7 @@ module.exports = (app)=> {
 
     //设置能访问接口的域名,http 方法
     app.use(cors({
-        origin: ["http://localhost:3000"],
+        origin: ["http://localhost:3004"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"]
     }));

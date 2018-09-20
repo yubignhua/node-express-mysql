@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('express:server');
 
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var others = require('./routes/others');
+var index = require('./../routes/index');
+var users = require('./../routes/users');
+var others = require('./../routes/others');
 
 
 

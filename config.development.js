@@ -8,7 +8,7 @@ module.exports = {
     cookieSecret: 'yubh',
     db:'yubh_db',
     host:'localhost',
-    port:3003,
+    port:3004,
     url:'mongodb://localhost:27017',
     params:{
         host: 'localhost',

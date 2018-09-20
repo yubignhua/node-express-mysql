@@ -11,15 +11,15 @@ const bodyParser = require('body-parser');
 const debug = require('debug')('express:server');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const settings = require('./setting');
+const settings = require('./../setting');
 
 //引入路由配置
-var home = require('./routes/home');//主页
-var login = require('./routes/login');//登录页
-var reg = require('./routes/reg');//登录页
-var getUserData = require('./routes/getUserData');
-var users = require('./routes/users');
-var others = require('./routes/others');
+var home = require('./../routes/home');//主页
+var login = require('./../routes/login');//登录页
+var reg = require('./../routes/reg');//登录页
+var getUserData = require('./../routes/getUserData');
+var users = require('./../routes/users');
+var others = require('./../routes/others');
 //实例化 express
 var app = express();
 
