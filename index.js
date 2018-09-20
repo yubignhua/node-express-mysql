@@ -15,5 +15,4 @@ consign({verbose:false})
     .then('routers')
     .then('boot.js')
     .into(app);
-
 module.exports = app;

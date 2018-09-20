@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const debug = require('debug')('express:server');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const settings = require('./../setting');
+const settings = require('./setting');
 
 //引入路由配置
 var home = require('./../routes/home');//主页

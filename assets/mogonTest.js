@@ -1,13 +1,7 @@
-
-
-
-
-
-
 const MongonClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const config = require('../setting');
+const config = require('setting');
 
 module.exports = function () {
     //链接数据库

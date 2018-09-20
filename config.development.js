@@ -24,8 +24,6 @@ module.exports = {
             idle: 10000
         },
         operatorsAliases: false
-
-
     },
     jwtSecret: "asdfsafsafsafsafsafsafsafd",
     jwtSession: {session: false}
