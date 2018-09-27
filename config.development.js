@@ -4,18 +4,15 @@
 
 module.exports = {
     username: "root",//数据库的用户名称
-    //password: "123456",//登录数据库密码
-    password: "Yubh@123",//登录数据库密码
-    cookieSecret: 'yubh',
-    // db:'yubh_db',//数据库名
-    db:'reat_express_yubh',//数据库名
-    host:'localhost',
-    port:3004,
+    //password: "123456",//登录数据库密码(本地数据库)
+    password: "Yubh@123",//登录数据库密码(远程数据库)
+    // db:'yubh_db',//数据库名(本地数据库)
+    db:'reat_express_yubh',//数据库名(远程数据库)
     url:'mongodb://localhost:27017',
     params:{ //使用连接池连接
-          // host: 'localhost',
-          host: '116.85.54.213',//链接数据库的主机
-          port:'3306',//连接数据库的端口
+          // host: 'localhost',(本地数据库)
+          host: '116.85.54.213',//链接数据库的主机(远程数据库)
+          port:'3306',//连接数据库的端口(远程数据库)
           dialect: 'mysql',//链接数据库的名称
           dialectOptions: {
             charset: 'utf8mb4'
@@ -29,7 +26,10 @@ module.exports = {
         },
         operatorsAliases: false
     },
-    jwtSecret: "asdfsafsafsafsafsafsafsafd",
-    jwtSession: {session: false}
+	host : 'localhost',//主机名
+	port : 80,//主机端口号
+	cookieSecret : 'yubh',
+	jwtSecret : "asdfsafsafsafsafsafsafsafd",
+	jwtSession : {session : false}
 
 };

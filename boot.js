@@ -19,11 +19,12 @@ module.exports = (app)=>{
     //设置端口号
     var port = normalizePort(app.config.port || '3001');
     app.set('port', port);
-    app.db.sequelize.sync().done(()=>{//同步所有已定义的模型到数据库中成功后的回调
+  
+	app.db.sequelize.sync().done(()=>{//同步所有已定义的模型到数据库中成功后的回调
         let server = http.createServer(app).listen(app.get("port"), () => {
 	        const address = server.address();
-          console.log("address:::::",address);
-          console.log(`SERVER LISTENING TO PORT:${app.get('port')}>>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>`);
+          console.log("address:::::",app.config);
+          console.log(`SERVER LISTENING TO PORT:http://${app.config.host}:${app.get('port')}>>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>`);
         });
     });
     

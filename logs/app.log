@@ -310,3 +310,4 @@
 {"message":"::1 - - [20/Sep/2018:09:44:27 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n","level":"info"}
 {"message":"::1 - - [20/Sep/2018:09:44:27 +0000] \"GET /test/users/ HTTP/1.1\" 304 -\n","level":"info"}
 {"message":"::1 - - [20/Sep/2018:09:45:10 +0000] \"POST /test/users/ HTTP/1.1\" 412 55\n","level":"info"}
+{"message":"::1 - - [20/Sep/2018:09:59:58 +0000] \"GET /test/users/ HTTP/1.1\" 304 -\n","level":"info"}
