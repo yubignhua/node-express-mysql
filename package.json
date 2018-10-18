@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "supervisor babel-node index.js",
+    "start": "NODE_ENV=development supervisor babel-node index.js",
+    "local": "NODE_ENV=local supervisor babel-node index.js",
     "dev": "supervisor server.js"
   },
   "dependencies": {
