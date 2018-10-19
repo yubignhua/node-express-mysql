@@ -8,6 +8,7 @@ let db = null;
 module.exports = app =>{
     "use strict";
     if(!db){
+        console.log('======',__dirname)
         //获取配置信息
         const cfg = app.config.config;
         //初始化 sequelize 连接数据库
