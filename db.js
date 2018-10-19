@@ -9,7 +9,11 @@ module.exports = app =>{
     "use strict";
     if(!db){
         //获取配置信息
-        const config = app.config;
+        const config = app.config.config;
+        console.log('config::',config.db)
+        console.log('config::',config.username)
+        console.log('config::',config.password)
+        console.log('config::',config.params)
         //初始化 sequelize 连接数据库
         const sequelize = new Sequelize(
             config.db,//数据库名

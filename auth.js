@@ -5,7 +5,7 @@ const ExtractJwt = passportMap.ExtractJwt;
 
 module.exports = app => {
     const Users = app.db.models.Users;
-    const cfg = app.config;
+    const cfg = app.config.config;
     let opts = {};
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("JWT");
     opts.secretOrKey = cfg.jwtSecret;
