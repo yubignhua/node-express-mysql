@@ -24,7 +24,7 @@ module.exports = {
         operatorsAliases: false
     },
 	host : 'localhost',//主机名
-	port : 80,//远程主机端口号
+	//port : 80,//访问主机的端口号
 	cookieSecret : 'yubh',
 	jwtSecret : "asdfsafsafsafsafsafsafsafd",
 	jwtSession : {session : false}
