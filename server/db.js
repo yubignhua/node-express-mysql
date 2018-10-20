@@ -8,7 +8,6 @@ let db = null;
 module.exports = app =>{
     "use strict";
     if(!db){
-        console.log('======',__dirname)
         //获取配置信息
         const cfg = app.config.config;
         //初始化 sequelize 连接数据库
@@ -23,7 +22,7 @@ module.exports = app =>{
             models: {}
         };
         //获取数据库模型文件存放路径
-        const dir = path.join(__dirname,'models');
+        const dir = path.join(__dirname,'../','models');
         fs.readdirSync(dir).forEach( file =>{
             //获取数据库模型文件路径
             const modelDir = path.join(dir,file);

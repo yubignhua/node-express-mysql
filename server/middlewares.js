@@ -18,7 +18,7 @@ const connectHistoryApiFallback = require('connect-history-api-fallback');
 const MongoStore = require('connect-mongo')(session);
 
 module.exports = (app)=> {
-    
+    const cfg = app.config.config;    
     /*
     设置/public/favicon.ico为favicon图标
     app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -46,15 +46,15 @@ module.exports = (app)=> {
     //加载解析urlencoded请求体的中间件
     app.use(bodyParser.urlencoded({extended: false}));
     //加载解析cookie的中间件
-    app.use(cookieParser(app.config.cookieSecret));
+    app.use(cookieParser(cfg.cookieSecret));
     // 由js控制路由后端不做页面路由配置，一定要写在express.static前面！！！
     app.use('/', connectHistoryApiFallback());
     //app.use(connectHistoryApiFallback());
     //设置dist文件夹为存放静态文件的目录
-    app.use(express.static(path.join(__dirname, 'dist')));
+    app.use(express.static(path.join(__dirname,'../','dist')));
     app.use(session({
-        secret: app.config.cookieSecret,//作为服务器端生成session的签名 用来对session id相关的cookie进行签名
-        key: app.config.db,//cookie name
+        secret: cfg.cookieSecret,//作为服务器端生成session的签名 用来对session id相关的cookie进行签名
+        key: cfg.db,//cookie name
         cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//cookie 报错最大期限为 30 days
         resave: false,
         saveUninitialized: false

@@ -9,6 +9,7 @@ module.exports = app => {
     let opts = {};
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("JWT");
     opts.secretOrKey = cfg.jwtSecret;
+    console.log('opts======',opts)
     const strategy = new Strategy(opts, (payload, done) => {
         console.log('=======payload============',payload);
         Users.findById(payload.id)
