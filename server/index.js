@@ -15,7 +15,7 @@ consign({
   .then("db.js")
   .then("auth.js")
   .then("middlewares.js")
-  .then("routers")
+  .then("../routers")
   .then("boot.js")
   .into(app);
 module.exports = app;

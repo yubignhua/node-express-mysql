@@ -1,6 +1,4 @@
-/**
- * Created by yubh on 2018/2/5.
- */
+
 //const fs = require("fs");
 //const https = require("https");
 const http = require('http');
@@ -31,10 +29,6 @@ module.exports = (app)=>{
 
 };
 
-
-/**
- * Normalize a port into a number, string, or false.
- */
 function normalizePort(val){
     var port = parseInt(val, 10);
     //console.log('port::::',port);

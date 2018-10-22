@@ -19,10 +19,10 @@ const MongoStore = require('connect-mongo')(session);
 
 module.exports = (app)=> {
     const cfg = app.config.config;    
-    /*
-    设置/public/favicon.ico为favicon图标
-    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-    */
+    
+    //设置/public/favicon.ico为favicon图标
+    //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+    
     
     //加载日志中间件打印网络请求日志方法
     app.use(morgan('dev'));
@@ -52,6 +52,7 @@ module.exports = (app)=> {
     //app.use(connectHistoryApiFallback());
     //设置dist文件夹为存放静态文件的目录
     app.use(express.static(path.join(__dirname,'../','dist')));
+    console.log('cfg:::::',cfg)
     app.use(session({
         secret: cfg.cookieSecret,//作为服务器端生成session的签名 用来对session id相关的cookie进行签名
         key: cfg.db,//cookie name
@@ -66,11 +67,16 @@ module.exports = (app)=> {
         })*/
     }));
 
+
+
+
+
+
     //设置能访问接口的域名,http 方法
     app.use(cors({
         origin: ["http://localhost:3004"],
         methods: ["GET", "POST", "PUT", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"]
+        allowedHeaders: ["Content-Type"]
     }));
 
 };
