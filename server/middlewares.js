@@ -67,11 +67,6 @@ module.exports = (app)=> {
         })*/
     }));
 
-
-
-
-
-
     //设置能访问接口的域名,http 方法
     app.use(cors({
         origin: ["http://localhost:3004"],
