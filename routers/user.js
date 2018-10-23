@@ -22,8 +22,7 @@ module.exports = app =>{
             console.log('req.body::::',req.body);
             Users.findById(req.body.id,{
                 attributes:['id','name','email']
-            })
-                .then(result => {
+            }).then(result => {
                     if(result){
                         console.log('result===',result.dataValues);
                         result.dataValues["old"] = 18;
@@ -42,7 +41,7 @@ module.exports = app =>{
      * 注册用户
      */
     app.post('/test/users',(req,res)=>{
-        console.log('req====',req.body);
+        console.log('req.body====',req.body);
         //存储数据
         Users.create(req.body)
             .then(result => res.json({msg:'注册成功'}))

@@ -28,10 +28,9 @@ module.exports = (sequelize,DataType)=>{
         email: {
             type: DataType.STRING,
             unique: true,
-            allowNull: false,
-            validate: {
-                notEmpty: true
-            }
+            allowNull: true,
+            defaultValue: '981842762@qq.com',
+           
         }
         
     },{

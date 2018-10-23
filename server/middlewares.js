@@ -56,7 +56,7 @@ module.exports = (app)=> {
     app.use(session({
         secret: cfg.cookieSecret,//作为服务器端生成session的签名 用来对session id相关的cookie进行签名
         key: cfg.db,//cookie name
-        cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},//cookie 报错最大期限为 30 days
+        cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 },//cookie 报错最大期限为 30 days
         resave: false,
         saveUninitialized: false
         /*store: new MongoStore({  //向数据库存储 sesstion 信息
@@ -73,6 +73,18 @@ module.exports = (app)=> {
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type"]
     }));
+
+    // 允许跨域
+    app.all('*', function (req, res, next) {
+          res.header("Access-Control-Allow-Credentials", true)
+          res.header("Access-Control-Allow-Origin", "*")
+          res.header("Access-Control-Allow-Headers", "X-Requested-With")
+          res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS")
+          res.header("X-Powered-By", ' 3.2.1')
+          res.header("Content-Type", "application/json;charset=utf-8")
+          next()
+        })
+      
 
 };
 
