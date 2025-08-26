@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-    username: "root",//数据库的用户名称
+    username: "myblog",//数据库的用户名称
     //password: "123456",//登录数据库密码(本地数据库)
     password: "Yubh@123",//登录数据库密码(远程数据库)
     // db:'yubh_db',//数据库名(本地数据库)
@@ -11,7 +11,7 @@ module.exports = {
     url:'mongodb://localhost:27017',
     params:{ //使用连接池连接
           // host: 'localhost',(本地数据库)
-          host: '116.85.54.213',//链接数据库的主机(远程数据库)
+          host: '149.88.88.205',//链接数据库的主机(远程数据库)
           port:'3306',//连接数据库的端口(远程数据库)
           dialect: 'mysql',//链接数据库的名称
           dialectOptions: {
