@@ -20,12 +20,14 @@ module.exports = (app)=>{
     var port = normalizePort(app.config.port || '3001');
     app.set('port', port);
   
-	app.db.sequelize.sync().done(()=>{//同步所有已定义的模型到数据库中成功后的回调
+	app.db.sequelize.sync().then(()=>{//同步所有已定义的模型到数据库中成功后的回调
         let server = http.createServer(app).listen(app.get("port"), () => {
 	        const address = server.address();
-          console.log("address:::::",app.config);
+        //   console.log("address:::::",app.config);
           console.log(`SERVER LISTENING TO PORT:http://${app.config.host}:${app.get('port')}>>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>`);
         });
+    }).catch(err => {
+        console.error('数据库同步失败:', err.message);
     });
     
 

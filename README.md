@@ -5,7 +5,12 @@
 ## 项目概述
 
 这是一个使用 Node.js、Express 框架和 MySQL 数据库构建的 Web 应用程序，支持用户认证、任务管理等功能。项目采用 MVC 架构模式，具备完整的前后端分离设计。
+t
+his is web application that use node.js express andm mysql. this application support user auth and task management. project adopt MVC archetecture and it have compelete 
 
+
+
+This is a web application built using Node.js, Express framework, and MySQL database, supporting functions such as user authentication and task management. The project adopts the MVC architectural pattern and has a complete front-end and back-end separation design.
 ## 技术栈
 
 ### 后端技术
@@ -29,10 +34,10 @@
 ## 项目架构
 
 ```
-├── assets/           # 静态资源文件
-├── bin/             # 可执行文件
-├── dist/            # 构建输出目录
-├── libs/            # 数据库连接库
+├── assets/           # 静态资源文件 static resource files
+├── bin/             # 可执行文件  exe file
+├── dist/            # 构建输出目录  build output directory
+├── libs/            # 数据库连接库 
 ├── logs/            # 日志文件
 ├── models/          # 数据模型
 ├── public/          # 公共静态资源
@@ -206,17 +211,19 @@ npm run start
 tail -f logs/app.log
 ```
 
+
+
 ## 贡献指南
 
-1. Fork 项目
-2. 创建功能分支
-3. 提交更改
-4. 推送到分支
-5. 创建 Pull Request
+1. Fork 项目   fork  project
+2. 创建功能分支  create function branch
+3. 提交更改  commit change
+4. 推送到分支  push function remote branch
+5. 创建 Pull Request  create pull request 
 
 ## 许可证
 
-本项目采用 MIT 许可证
+本项目采用 MIT 许可证  the project adopt MIT license
 
 ---
 

@@ -7,8 +7,8 @@
     "dev": "supervisor server.js"
   },
   "dependencies": {
-    "body-parser": "~1.18.2",
     "bcrypt": "^5.1.1",
+    "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "^2.5.7",
@@ -30,15 +30,16 @@
     "logger": "0.0.1",
     "mongodb": "^3.0.1",
     "mysql": "^2.15.0",
-    "mysql2": "^1.5.1",
+    "mysql2": "^3.14.3",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
-    "sequelize": "^4.32.6",
+    "sequelize": "^6.37.7",
     "supervisor": "^0.12.0",
     "winston": "^3.0.0-rc1"
   },
   "config": {
-    "commitizen": { "path": "cz-conventional-changelog" }
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
-
 }
