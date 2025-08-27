@@ -262,4 +262,233 @@ router.get('/timeline', async (req, res) => {
   }
 });
 
+// POST /api/blog/posts - Create new blog post
+router.post('/posts', async (req, res) => {
+  try {
+    const {
+      title,
+      content,
+      excerpt,
+      tags = [],
+      code_examples = [],
+      challenge = null,
+      status = 'draft',
+      featured = false
+    } = req.body;
+
+    // Validate required fields
+    if (!title || !content) {
+      return res.status(400).json({
+        success: false,
+        error: 'Title and content are required'
+      });
+    }
+
+    // Generate slug from title
+    const slug = title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim('-');
+
+    // Check if slug already exists
+    const existingPost = await BlogPost.findOne({ where: { slug } });
+    if (existingPost) {
+      return res.status(400).json({
+        success: false,
+        error: 'A post with this title already exists'
+      });
+    }
+
+    // Create the post
+    const post = await BlogPost.create({
+      title,
+      slug,
+      content,
+      excerpt: excerpt || content.substring(0, 200) + '...',
+      tags: Array.isArray(tags) ? tags : [],
+      code_examples: Array.isArray(code_examples) ? code_examples : [],
+      challenge,
+      status,
+      featured,
+      published_at: status === 'published' ? new Date() : null
+    });
+
+    res.status(201).json({
+      success: true,
+      data: post
+    });
+  } catch (error) {
+    console.error('Blog post creation error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to create blog post'
+    });
+  }
+});
+
+// PUT /api/blog/posts/:id - Update existing blog post
+router.put('/posts/:id', async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const {
+      title,
+      content,
+      excerpt,
+      tags,
+      code_examples,
+      challenge,
+      status,
+      featured
+    } = req.body;
+
+    const post = await BlogPost.findByPk(postId);
+    if (!post) {
+      return res.status(404).json({
+        success: false,
+        error: 'Blog post not found'
+      });
+    }
+
+    // Update slug if title changed
+    let slug = post.slug;
+    if (title && title !== post.title) {
+      slug = title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim('-');
+
+      // Check if new slug already exists
+      const existingPost = await BlogPost.findOne({ 
+        where: { 
+          slug,
+          id: { [BlogPost.sequelize.Sequelize.Op.ne]: postId }
+        }
+      });
+      if (existingPost) {
+        return res.status(400).json({
+          success: false,
+          error: 'A post with this title already exists'
+        });
+      }
+    }
+
+    // Update the post
+    const updatedPost = await post.update({
+      title: title || post.title,
+      slug,
+      content: content || post.content,
+      excerpt: excerpt || (content ? content.substring(0, 200) + '...' : post.excerpt),
+      tags: tags !== undefined ? (Array.isArray(tags) ? tags : []) : post.tags,
+      code_examples: code_examples !== undefined ? (Array.isArray(code_examples) ? code_examples : []) : post.code_examples,
+      challenge: challenge !== undefined ? challenge : post.challenge,
+      status: status || post.status,
+      featured: featured !== undefined ? featured : post.featured,
+      published_at: status === 'published' && post.status !== 'published' ? new Date() : post.published_at
+    });
+
+    res.json({
+      success: true,
+      data: updatedPost
+    });
+  } catch (error) {
+    console.error('Blog post update error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to update blog post'
+    });
+  }
+});
+
+// DELETE /api/blog/posts/:id - Delete blog post
+router.delete('/posts/:id', async (req, res) => {
+  try {
+    const postId = req.params.id;
+    
+    const post = await BlogPost.findByPk(postId);
+    if (!post) {
+      return res.status(404).json({
+        success: false,
+        error: 'Blog post not found'
+      });
+    }
+
+    await post.destroy();
+
+    res.json({
+      success: true,
+      message: 'Blog post deleted successfully'
+    });
+  } catch (error) {
+    console.error('Blog post deletion error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to delete blog post'
+    });
+  }
+});
+
+// GET /api/blog/posts/:id/edit - Get post for editing (includes drafts)
+router.get('/posts/:id/edit', async (req, res) => {
+  try {
+    const postId = req.params.id;
+    
+    const post = await BlogPost.findByPk(postId);
+    if (!post) {
+      return res.status(404).json({
+        success: false,
+        error: 'Blog post not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      data: post
+    });
+  } catch (error) {
+    console.error('Blog post fetch for edit error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch blog post for editing'
+    });
+  }
+});
+
+// GET /api/blog/drafts - Get all draft posts
+router.get('/drafts', async (req, res) => {
+  try {
+    const { page = 1, limit = 10 } = req.query;
+    const offset = (page - 1) * limit;
+
+    const { count, rows: posts } = await BlogPost.findAndCountAll({
+      where: { status: 'draft' },
+      order: [['updated_at', 'DESC']],
+      offset: parseInt(offset),
+      limit: parseInt(limit)
+    });
+
+    res.json({
+      success: true,
+      data: {
+        posts,
+        pagination: {
+          page: parseInt(page),
+          limit: parseInt(limit),
+          total: count,
+          pages: Math.ceil(count / limit)
+        }
+      }
+    });
+  } catch (error) {
+    console.error('Draft posts fetch error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch draft posts'
+    });
+  }
+});
+
 module.exports = router;
