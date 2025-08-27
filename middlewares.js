@@ -56,8 +56,15 @@ module.exports = (app)=> {
     //加载解析cookie的中间件
     app.use(cookieParser(app.config.cookieSecret));
     // 由js控制路由后端不做页面路由配置，一定要写在express.static前面！！！
-    app.use('/', connectHistoryApiFallback());
-    //app.use(connectHistoryApiFallback());
+    // 配置history fallback，但排除API路由
+    app.use('/', connectHistoryApiFallback({
+        rewrites: [
+            // 排除API路由，让它们正常处理
+            { from: /^\/api\/.*$/, to: function(context) {
+                return context.parsedUrl.pathname;
+            }}
+        ]
+    }));
     //设置dist文件夹为存放静态文件的目录
     app.use(express.static(path.join(__dirname, 'dist')));
     app.use(session({

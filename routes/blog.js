@@ -6,8 +6,8 @@ let BlogPost = null;
 
 // Middleware to ensure database connection
 router.use((req, res, next) => {
-  if (!BlogPost && req.app.locals.db && req.app.locals.db.models) {
-    BlogPost = req.app.locals.db.models.BlogPost;
+  if (!BlogPost && req.app.db && req.app.db.models) {
+    BlogPost = req.app.db.models.BlogPost;
   }
   
   if (!BlogPost) {
