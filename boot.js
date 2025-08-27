@@ -44,8 +44,8 @@ module.exports = (app)=>{
         server.listen(app.get("port"), () => {
 	        const address = server.address();
         //   console.log("address:::::",app.config);
-          console.log(`SERVER LISTENING TO PORT:http://${app.config.host}:${app.get('port')}>>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>`);
           console.log(`Socket.IO server initialized and ready for connections`);
+          console.log(`SERVER LISTENING TO>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>> PORT:http://${app.config.host}:${app.get('port')}`);
         });
     }).catch(err => {
         console.error('数据库同步失败:', err.message);

@@ -63,7 +63,7 @@ module.exports = app =>{
                             }
                         }
                     });
-                    console.log('MongoDB models loaded:', Object.keys(db.mongoModels));
+                    console.log('MongoDB models loaded:>>>>', Object.keys(db.mongoModels));
                 }
             })
             .catch(err => {

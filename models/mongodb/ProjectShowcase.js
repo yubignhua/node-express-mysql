@@ -339,4 +339,5 @@ projectShowcaseSchema.methods.trackAction = function(action) {
   return Promise.resolve(this);
 };
 
-module.exports = mongoose.model('ProjectShowcase', projectShowcaseSchema);
+// Check if model already exists to prevent OverwriteModelError
+module.exports = mongoose.models.ProjectShowcase || mongoose.model('ProjectShowcase', projectShowcaseSchema);

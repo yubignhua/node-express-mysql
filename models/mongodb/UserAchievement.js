@@ -466,10 +466,11 @@ userAchievementSchema.methods.recordActivity = function(activityType, metadata =
   return this.save();
 };
 
-// Achievement definitions model
-const AchievementDefinition = mongoose.model('AchievementDefinition', achievementDefinitionSchema);
+// Check if models already exist to prevent OverwriteModelError
+const AchievementDefinition = mongoose.models.AchievementDefinition || mongoose.model('AchievementDefinition', achievementDefinitionSchema);
+const UserAchievement = mongoose.models.UserAchievement || mongoose.model('UserAchievement', userAchievementSchema);
 
 module.exports = {
-  UserAchievement: mongoose.model('UserAchievement', userAchievementSchema),
+  UserAchievement,
   AchievementDefinition
 };

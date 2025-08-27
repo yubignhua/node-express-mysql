@@ -45,7 +45,7 @@ module.exports = {
 
     },
 	host : 'localhost',//主机名
-	 port : 3004,//主机端口号
+	 port : 3001,//主机端口号
 	//port : 80,//主机端口号
 	cookieSecret : 'yubh',
 	jwtSecret : "asdfsafsafsafsafsafsafsafd",

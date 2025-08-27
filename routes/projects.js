@@ -109,20 +109,31 @@ router.post('/:id/demo-interaction', async (req, res) => {
 // GET /api/projects/map/islands
 router.get('/map/islands', async (req, res) => {
   try {
-    const projects = await Project.find({}, 'name description techStack islandPosition githubUrl demoUrl featured');
+    const projects = await Project.find({}, 'name description shortDescription techStack islandPosition githubUrl demoUrl liveUrl featured category status demoConfig achievements metrics');
     
     // Transform projects into island format for the adventure map
     const islands = projects.map(project => ({
       id: project._id,
       name: project.name,
       description: project.description,
-      position: project.islandPosition,
-      techStack: project.techStack,
+      shortDescription: project.shortDescription,
+      position: project.islandPosition || {
+        x: Math.random() * 10 - 5,
+        y: Math.random() * 10 - 5,
+        size: project.featured ? 'large' : 'medium',
+        theme: 'tropical'
+      },
+      techStack: project.techStack || [],
+      category: project.category || 'web-app',
+      status: project.status || 'completed',
       githubUrl: project.githubUrl,
       demoUrl: project.demoUrl,
-      featured: project.featured,
-      size: project.featured ? 'large' : 'medium',
-      color: project.featured ? '#FFD700' : '#00f5ff'
+      liveUrl: project.liveUrl,
+      featured: project.featured || false,
+      color: project.featured ? '#FFD700' : '#00f5ff',
+      demoConfig: project.demoConfig,
+      achievements: project.achievements || [],
+      metrics: project.metrics
     }));
 
     res.json({

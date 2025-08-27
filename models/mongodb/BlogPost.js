@@ -215,4 +215,5 @@ blogPostSchema.methods.updateInteractionStats = function(statType, increment = 1
   return Promise.resolve(this);
 };
 
-module.exports = mongoose.model('BlogPost', blogPostSchema);
+// Check if model already exists to prevent OverwriteModelError
+module.exports = mongoose.models.BlogPost || mongoose.model('BlogPost', blogPostSchema);

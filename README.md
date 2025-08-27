@@ -211,6 +211,13 @@ npm run start
 tail -f logs/app.log
 ```
 
+✅ 运行中的服务：
+
+MongoDB - 端口 27017 (Docker 容器)
+Redis - 端口 6379 (Docker 容器)
+后端服务器 - 端口 3001
+
+
 
 
 ## 贡献指南

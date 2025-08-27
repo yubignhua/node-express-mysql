@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "supervisor babel-node index.js",
+    "start": "npm run dev:portfolio",
+    "start2": "supervisor babel-node index.js",
     "dev": "supervisor server.js",
     "dev:portfolio": "NODE_ENV=development PORT=3001 supervisor index.js"
   },

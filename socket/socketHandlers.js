@@ -130,6 +130,42 @@ const socketHandlers = (io) => {
       });
     });
 
+    // Handle real-time demo interactions
+    socket.on('project-demo-interaction', (interactionData) => {
+      const user = connectedUsers.get(socket.id);
+      if (user) {
+        user.lastActivity = new Date();
+        user.interactionCount++;
+        
+        const session = userSessions.get(socket.id);
+        if (session) {
+          session.interactions.push({
+            type: 'demo-interaction',
+            projectId: interactionData.projectId,
+            interactionType: interactionData.interactionType,
+            timestamp: new Date(),
+            result: interactionData.result
+          });
+        }
+      }
+      
+      // Broadcast demo interaction to other users for real-time updates
+      socket.broadcast.emit('demo-interaction-update', {
+        projectId: interactionData.projectId,
+        userId: socket.id,
+        userName: user ? user.name : 'Anonymous',
+        interactionType: interactionData.interactionType,
+        timestamp: interactionData.timestamp,
+        result: interactionData.result
+      });
+      
+      // Send confirmation back to sender
+      socket.emit('demo-interaction-confirmed', {
+        projectId: interactionData.projectId,
+        timestamp: interactionData.timestamp
+      });
+    });
+
     // Handle code collaboration with enhanced synchronization
     socket.on('code-collaboration', (codeData) => {
       const user = connectedUsers.get(socket.id);

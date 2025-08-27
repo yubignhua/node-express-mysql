@@ -19,6 +19,14 @@ const MongoStore = require('connect-mongo')(session);
 
 module.exports = (app)=> {
     
+    // 首先设置CORS，必须在其他中间件之前
+    app.use(cors({
+        origin: true, // 允许所有域名访问
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true
+    }));
+    
     /*
     设置/public/favicon.ico为favicon图标
     app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -66,12 +74,7 @@ module.exports = (app)=> {
         })*/
     }));
 
-    //设置能访问接口的域名,http 方法
-    app.use(cors({
-        origin: ["http://localhost:3004"],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"]
-    }));
+
 
 };
 
