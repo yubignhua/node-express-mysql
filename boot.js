@@ -6,6 +6,8 @@
 const http = require('http');
 const path = require('path');
 const ejs = require('ejs');
+const { Server } = require('socket.io');
+const socketHandlers = require('./socket/socketHandlers');
 
 
 module.exports = (app)=>{
@@ -21,10 +23,29 @@ module.exports = (app)=>{
     app.set('port', port);
   
 	app.db.sequelize.sync().then(()=>{//同步所有已定义的模型到数据库中成功后的回调
-        let server = http.createServer(app).listen(app.get("port"), () => {
+        let server = http.createServer(app);
+        
+        // Initialize Socket.IO
+        const io = new Server(server, {
+            cors: {
+                origin: process.env.FRONTEND_URL || "http://localhost:3000",
+                methods: ["GET", "POST"],
+                credentials: true
+            },
+            transports: ['websocket', 'polling']
+        });
+        
+        // Setup socket handlers
+        socketHandlers(io);
+        
+        // Make io available to the app
+        app.io = io;
+        
+        server.listen(app.get("port"), () => {
 	        const address = server.address();
         //   console.log("address:::::",app.config);
           console.log(`SERVER LISTENING TO PORT:http://${app.config.host}:${app.get('port')}>>>>>>>>>>>>>>>>(SERVER START)>>>>>>>>>>>>>>>>>>>>>`);
+          console.log(`Socket.IO server initialized and ready for connections`);
         });
     }).catch(err => {
         console.error('数据库同步失败:', err.message);

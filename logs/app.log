@@ -90,3 +90,5 @@
 {"level":"info","message":"::1 - - [27/Aug/2025:02:40:26 +0000] \"GET /images/my_pic_1.jpg HTTP/1.1\" 304 -\n"}
 {"level":"info","message":"::1 - - [27/Aug/2025:02:40:26 +0000] \"GET /images/my_pic_3.png HTTP/1.1\" 304 -\n"}
 {"level":"info","message":"::1 - - [27/Aug/2025:02:40:27 +0000] \"GET /test/users/ HTTP/1.1\" 200 392\n"}
+{"level":"info","message":"::1 - - [27/Aug/2025:07:07:58 +0000] \"OPTIONS /api/portfolio/skills HTTP/1.1\" 204 0\n"}
+{"level":"info","message":"::1 - - [27/Aug/2025:07:07:58 +0000] \"OPTIONS /api/portfolio/skills HTTP/1.1\" 204 0\n"}
