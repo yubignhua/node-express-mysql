@@ -14,8 +14,63 @@ const cors =  require("cors");
 const compression = require('compression');
 const helmet = require('helmet');
 const connectHistoryApiFallback = require('connect-history-api-fallback');
+const jwt = require('jsonwebtoken');
 
 const MongoStore = require('connect-mongo')(session);
+
+// Admin authentication middleware
+const authenticateAdmin = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1]; // Bearer TOKEN
+    
+    if (!token) {
+        return res.status(401).json({
+            success: false,
+            error: 'Access token required'
+        });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'asdfsafsafsafsafsafsafsafd');
+        
+        if (decoded.role !== 'admin') {
+            return res.status(403).json({
+                success: false,
+                error: 'Admin access required'
+            });
+        }
+
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(401).json({
+            success: false,
+            error: 'Invalid or expired token'
+        });
+    }
+};
+
+// Regular user authentication middleware
+const authenticateUser = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1]; // Bearer TOKEN
+    
+    if (!token) {
+        return res.status(401).json({
+            success: false,
+            error: 'Access token required'
+        });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'asdfsafsafsafsafsafsafsafd');
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(401).json({
+            success: false,
+            error: 'Invalid or expired token'
+        });
+    }
+};
 
 module.exports = (app)=> {
     

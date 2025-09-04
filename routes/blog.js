@@ -1,5 +1,37 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
+
+// Admin authentication middleware
+const authenticateAdmin = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1]; // Bearer TOKEN
+    
+    if (!token) {
+        return res.status(401).json({
+            success: false,
+            error: 'Access token required'
+        });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'asdfsafsafsafsafsafsafsafd');
+        
+        if (decoded.role !== 'admin') {
+            return res.status(403).json({
+                success: false,
+                error: 'Admin access required'
+            });
+        }
+
+        req.user = decoded;
+        next();
+    } catch (error) {
+        return res.status(401).json({
+            success: false,
+            error: 'Invalid or expired token'
+        });
+    }
+};
 
 // Get database models
 let BlogPost = null;
@@ -263,7 +295,7 @@ router.get('/timeline', async (req, res) => {
 });
 
 // POST /api/blog/posts - Create new blog post
-router.post('/posts', async (req, res) => {
+router.post('/posts', authenticateAdmin, async (req, res) => {
   try {
     const {
       title,
@@ -329,7 +361,7 @@ router.post('/posts', async (req, res) => {
 });
 
 // PUT /api/blog/posts/:id - Update existing blog post
-router.put('/posts/:id', async (req, res) => {
+router.put('/posts/:id', authenticateAdmin, async (req, res) => {
   try {
     const postId = req.params.id;
     const {
@@ -404,7 +436,7 @@ router.put('/posts/:id', async (req, res) => {
 });
 
 // DELETE /api/blog/posts/:id - Delete blog post
-router.delete('/posts/:id', async (req, res) => {
+router.delete('/posts/:id', authenticateAdmin, async (req, res) => {
   try {
     const postId = req.params.id;
     
@@ -432,7 +464,7 @@ router.delete('/posts/:id', async (req, res) => {
 });
 
 // GET /api/blog/posts/:id/edit - Get post for editing (includes drafts)
-router.get('/posts/:id/edit', async (req, res) => {
+router.get('/posts/:id/edit', authenticateAdmin, async (req, res) => {
   try {
     const postId = req.params.id;
     
@@ -458,7 +490,7 @@ router.get('/posts/:id/edit', async (req, res) => {
 });
 
 // GET /api/blog/drafts - Get all draft posts
-router.get('/drafts', async (req, res) => {
+router.get('/drafts', authenticateAdmin, async (req, res) => {
   try {
     const { page = 1, limit = 10 } = req.query;
     const offset = (page - 1) * limit;

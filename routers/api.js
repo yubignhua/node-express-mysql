@@ -4,6 +4,10 @@
  */
 
 module.exports = (app) => {
+    // Mount auth routes
+    const authRoutes = require('../routes/auth');
+    app.use('/api/auth', authRoutes);
+    
     // Mount blog routes
     const blogRoutes = require('../routes/blog');
     app.use('/api/blog', blogRoutes);
