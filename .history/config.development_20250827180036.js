@@ -4,7 +4,9 @@
 
 module.exports = {
     username: "reat_express_yubh",//数据库的用户名称
+    //password: "123456",//登录数据库密码(本地数据库)
     password: "Yu1988001@123",//登录数据库密码(远程数据库)
+    // db:'yubh_db',//数据库名(本地数据库)
     db:'familyDB',//数据库名(远程数据库)
     url:'mongodb://localhost:27017',
     params:{ //使用连接池连接
