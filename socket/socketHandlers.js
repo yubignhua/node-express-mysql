@@ -1,4 +1,4 @@
-const sessionManager = require('../utils/sessionManager');
+// const sessionManager = require('../utils/sessionManager');
 
 const socketHandlers = (io) => {
   // Store connected users with enhanced session tracking
@@ -34,7 +34,7 @@ const socketHandlers = (io) => {
       userSessions.set(socket.id, sessionInfo);
       
       // Store session in Redis for persistence
-      sessionManager.setSession(socket.id, sessionInfo, 3600); // 1 hour TTL
+      // sessionManager.setSession(socket.id, sessionInfo, 3600); // 1 hour TTL
       
       // Send welcome data to the user
       socket.emit('session-initialized', {

@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 const fs = require("fs");
 const path = require('path');
 const mongoConnection = require('./config/mongodb');
-const sessionManager = require('./utils/sessionManager');
+// const sessionManager = require('./utils/sessionManager');
 let db = null;
 module.exports = app =>{
     "use strict";
@@ -34,7 +34,7 @@ module.exports = app =>{
             models: {}, // Sequelize models
             mongoModels: {}, // MongoDB models
             mongodb: null,
-            redis: sessionManager
+            // redis: sessionManager
         };
         
         // Initialize MongoDB connection
