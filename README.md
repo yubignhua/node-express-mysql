@@ -215,7 +215,7 @@ tail -f logs/app.log
 
 MongoDB - 端口 27017 (Docker 容器)
 Redis - 端口 6379 (Docker 容器)
-后端服务器 - 端口 3001
+后端服务器 - 端口 4001
 
 
 

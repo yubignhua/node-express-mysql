@@ -110,7 +110,7 @@ io.on('connection', (socket) => {
         code: `// Client setup
 import io from 'socket.io-client'
 
-const socket = io('http://localhost:3001')
+const socket = io('http://localhost:4001')
 
 socket.on('connect', () => {
   console.log('Connected to server')

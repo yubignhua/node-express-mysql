@@ -89,7 +89,7 @@ app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 server.listen(PORT, () => {
   console.log(`🚀 Portfolio server running on port ${PORT}`);

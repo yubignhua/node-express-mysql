@@ -19,7 +19,7 @@ module.exports = (app)=>{
     app.engine('html', ejs.renderFile);
     
     //设置端口号
-    var port = normalizePort(app.config.port || '3001');
+    var port = normalizePort(app.config.port);
     app.set('port', port);
   
 	app.db.sequelize.sync().then(()=>{//同步所有已定义的模型到数据库中成功后的回调
