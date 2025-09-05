@@ -2,25 +2,26 @@
  * Created by yubh on 2018/2/5.
  */
 
+require('dotenv').config();
+
 module.exports = {
-    username: "reat_express_yubh",//数据库的用户名称
-    password: "Yu1988001@123",//登录数据库密码(远程数据库)
-    db:'familyDB',//数据库名(远程数据库)
-    url:'mongodb://localhost:27017',
-    params:{ //使用连接池连接
-          host: '149.88.88.205',//链接数据库的主机(远程数据库)
-          port: 3306,//连接数据库的端口(远程数据库)
-          dialect: 'mysql',//链接数据库的名称
-          dialectOptions: {
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    db: process.env.DB_NAME,
+    url: process.env.DB_URL,
+    params: {
+        host: process.env.DB_HOST,
+        port: parseInt(process.env.DB_PORT),
+        dialect: process.env.DB_DIALECT,
+        dialectOptions: {
             charset: 'utf8mb4',
             connectTimeout: 60000
-          },
-        // pool configuration used to pool database connections
+        },
         pool: {
-            max: 5,
-            min: 0,
-            acquire: 30000,
-            idle: 10000
+            max: parseInt(process.env.DB_POOL_MAX),
+            min: parseInt(process.env.DB_POOL_MIN),
+            acquire: parseInt(process.env.DB_POOL_ACQUIRE),
+            idle: parseInt(process.env.DB_POOL_IDLE)
         },
         retry: {
             match: [
@@ -40,13 +41,10 @@ module.exports = {
             ],
             max: 3
         },
-
     },
-	host : 'localhost',//主机名
-	 port : 3001,//主机端口号
-	//port : 80,//主机端口号
-	cookieSecret : 'yubh',
-	jwtSecret : "asdfsafsafsafsafsafsafsafd",
-	jwtSession : {session : false}
-
+    host: process.env.APP_HOST,
+    port: parseInt(process.env.APP_PORT),
+    cookieSecret: process.env.COOKIE_SECRET,
+    jwtSecret: process.env.JWT_SECRET,
+    jwtSession: {session: false}
 };

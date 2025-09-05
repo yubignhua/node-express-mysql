@@ -8,15 +8,13 @@ class MongoDBConnection {
 
   async connect() {
     try {
-      const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio';
-      
+      const mongoUri = process.env.MONGODB_URI;
+
       const options = {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        maxPoolSize: 10,
-        serverSelectionTimeoutMS: 5000,
-        socketTimeoutMS: 45000,
-        bufferCommands: false
+        serverSelectionTimeoutMS: 3000,
+        socketTimeoutMS: 10000,
+        connectTimeoutMS: 3000,
+        maxPoolSize: 1
       };
 
       this.connection = await mongoose.connect(mongoUri, options);
